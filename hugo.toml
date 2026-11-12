@@ -1,0 +1,126 @@
+# ── Site basics ───────────────────────────────────────────────────────────────
+title = "My Blog"
+baseURL = "https://example.com/"
+relativeURLs = true
+canonifyURLs = true
+locale = "en-us"
+timeout = "90s"
+theme = "kana-hugo-theme"
+
+# Build behaviour
+disableHugoGeneratorInject = true
+cleanDestinationDir = true
+enableRobotsTXT = true
+
+# The theme supplies its own tag/category term pages, so the plain taxonomy
+# list pages (/tags/, /categories/) are disabled to keep the site tidy.
+disableKinds = ["taxonomy"]
+
+# ── Theme parameters ──────────────────────────────────────────────────────────
+[params]
+pagerSize = 25
+mainSections = ["posts"]
+author = "Your Name"
+description = "A personal blog for the things I write and read."
+subtitle = "Posts, notes, and my reading library"
+
+# SEO / social meta tags
+OpenGraph = true
+TwitterCards = true
+jsonld = true
+MobileWebAppTitle = "My Blog"
+FediverseCreator = "@you@example.social"
+
+# Responsive images (smallest breakpoint first, unconditional default last)
+imageSizes = [850, 710, 300]
+imageSizeString = "(max-width: 300px) 300w, (max-width: 710px) 710w, 850w"
+
+# A policies page linked in the footer
+policies = "/policies"
+
+# Icon shown next to the site title in the header (path relative to assets/)
+headerIcon = "images/hugo-theme.png"
+
+[params.license]
+name = "All rights reserved"
+title = "Copyright notice for this site"
+link = "/policies"
+
+# ── Menus ─────────────────────────────────────────────────────────────────────
+[[menus.main]]
+name = "About"
+title = "About me"
+pageRef = "/about"
+weight = 10
+
+[[menus.main]]
+name = "Blog"
+title = "All blog posts"
+pageRef = "/blog"
+weight = 20
+
+[[menus.main]]
+name = "Search"
+title = "Search the site"
+pageRef = "/search"
+weight = 30
+
+[[menus.footer]]
+name = "Library"
+title = "The books I've read"
+pageRef = "/library"
+weight = 10
+
+[[menus.footer]]
+name = "Notes"
+title = "Short-form notes"
+pageRef = "/notes"
+weight = 20
+
+[[menus.footer]]
+name = "Uses"
+title = "The gear and software I use"
+pageRef = "/uses"
+weight = 30
+
+[[menus.footer]]
+name = "Now"
+title = "What I'm doing now"
+pageRef = "/now"
+weight = 40
+
+[[menus.footer]]
+name = "RSS"
+title = "Subscribe in your feed reader"
+url = "/index.xml"
+weight = 50
+
+# ── Content settings ──────────────────────────────────────────────────────────
+[permalinks]
+posts = "/:year/:month/:slug/"
+
+[services.rss]
+limit = 30
+
+# JSON on the home page powers the client-side search. Do not remove it.
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+# ── Markdown / syntax highlighting ────────────────────────────────────────────
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+
+[markup.goldmark.parser.attribute]
+block = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.goldmark.renderHooks.image]
+useEmbedded = "fallback"
+
+[markup.goldmark.renderHooks.link]
+useEmbedded = "fallback"

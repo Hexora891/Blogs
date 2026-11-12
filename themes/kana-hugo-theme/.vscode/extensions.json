@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "GoHugoIO.gotmplfmt",
+        "tamasfe.even-better-toml"
+    ],
+    "unwantedRecommendations": []
+}

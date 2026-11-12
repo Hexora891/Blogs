@@ -1,0 +1,54 @@
+name: Create Release from Changelog
+
+on:
+    push:
+        tags:
+            - "*"
+permissions:
+    contents: write
+
+jobs:
+    test:
+        uses: ./.github/workflows/test.yml
+
+    release:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+
+            - name: Set release version
+              id: vars
+              run: |
+                  TAG_NAME="${GITHUB_REF#refs/tags/}"
+                  echo "version=$TAG_NAME" >> $GITHUB_OUTPUT
+
+            - name: Read changelog
+              id: changelog
+              run: |
+                  FILE=".changes/${{ steps.vars.outputs.version }}.md"
+                  if [ -f "$FILE" ]; then
+                    {
+                      echo 'content<<EOF'
+                      cat "$FILE"
+                      echo 'EOF'
+                    } >> "$GITHUB_OUTPUT"
+                  else
+                    echo "content=No changelog found." >> "$GITHUB_OUTPUT"
+                  fi
+
+            - name: Prepare theme zip
+              run: |
+                mkdir kana-hugo-theme
+                cp theme.toml LICENSE.txt README.md kana-hugo-theme/
+                cp -r archetypes assets layouts kana-hugo-theme/ 2>/dev/null || true
+                zip -r kana-hugo-theme.zip kana-hugo-theme
+
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v2
+              with:
+                tag_name: ${{ github.ref_name }}
+                name: ${{ steps.vars.outputs.version }}
+                body: ${{ steps.changelog.outputs.content }}
+                files: kana-hugo-theme.zip

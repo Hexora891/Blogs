@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+>
+    <channel>
+        <language>en-us</language>
+        <title>My Blog - Notes</title>
+        <link>http://localhost:1313/notes/</link>
+        <atom:link href="http://localhost:1313/notes/index.xml" rel="self" type="application/rss&#43;xml" />
+        <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" />
+
+        <description>Short-form notes and quick thoughts.</description><lastBuildDate>Wed, 11 Feb 2026 00:00:00 -0600</lastBuildDate>
+
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <item>
+            <title>Wednesday, 11 February, 2026</title><link>http://localhost:1313/notes/#02-11-another-note</link>
+            <guid isPermaLink="false">notes/2026/02-11-another-note.md</guid>
+            <dc:creator>Chris Wiegman</dc:creator>
+            <pubDate>Wed, 11 Feb 2026 00:00:00 -0600</pubDate><description>Each note has its own front matter with a title and a date. Group them by year in folders so the archive stays tidy as the collection grows.
+They also get their own RSS feed at /notes/index.xml, separate from the main blog feed.
+</description><content:encoded><![CDATA[ <p>Each note has its own front matter with a title and a date. Group them by year in folders so the
+archive stays tidy as the collection grows.</p>
+<p>They also get their own RSS feed at <code>/notes/index.xml</code>, separate from the main blog feed.</p>
+ ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Monday, 5 January, 2026</title><link>http://localhost:1313/notes/#01-05-a-short-note</link>
+            <guid isPermaLink="false">notes/2026/01-05-a-short-note.md</guid>
+            <dc:creator>Chris Wiegman</dc:creator>
+            <pubDate>Mon, 05 Jan 2026 00:00:00 -0600</pubDate><description>Notes are short-form content. They render inline on the notes page instead of getting a page of their own, which makes them perfect for quick thoughts you don&amp;amp;rsquo;t want to turn into a full post.
+</description><content:encoded><![CDATA[ <p>Notes are short-form content. They render inline on the <a href="http://localhost:1313/notes/">notes page</a> instead of getting a
+page of their own, which makes them perfect for quick thoughts you don&rsquo;t want to turn into a full
+post.</p>
+ ]]></content:encoded>
+        </item>
+        
+    </channel>
+</rss>

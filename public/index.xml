@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+>
+    <channel>
+        <language>en-us</language>
+        <title>My Blog</title>
+        <link>http://localhost:1313/</link>
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
+        <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" />
+
+        <description>A personal blog for the things I write and read.</description><lastBuildDate>Fri, 20 Mar 2026 14:15:00 -0500</lastBuildDate>
+
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <item>
+            <title>Code Blocks, Captions, and Other Hugo Tricks</title><enclosure url="http://localhost:1313/images/dev-image-03_hu_6d8c9d080b534bf1.jpeg" length="2342339" type="image/jpeg" /><link>http://localhost:1313/2026/03/code-blocks-captions-and-other-hugo-tricks/</link>
+            <guid isPermaLink="true">http://localhost:1313/2026/03/code-blocks-captions-and-other-hugo-tricks/</guid>
+            <dc:creator>Your Name</dc:creator>
+                <category>Hugo</category>
+                <category>hugo</category>
+                <category>markdown</category>
+                <category>theme</category><pubDate>Fri, 20 Mar 2026 14:15:00 -0500</pubDate><description>A quick tour of the Markdown features this theme adds on top of plain Hugo.</description><content:encoded><![CDATA[ <p>The Kana theme does not change how you write Markdown, but it does add a few helpful extras. Here are
+the ones I use most.</p>
+<h2 id="syntax-highlighting-with-a-filename">Syntax highlighting with a filename</h2>
+<p>Add a <code>file</code> attribute to a fenced code block and the theme will label it:</p>
+<div class="code-file">main.go</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello from a Hugo code block&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><p>The highlighting uses the Gruvbox palette.</p>
+<h2 id="collapsible-code-blocks">Collapsible code blocks</h2>
+<p>Long snippets can be folded away with <code>details=true</code>:</p>
+<details><summary>Details</summary><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new content posts/2026/my-new-post.md
+</span></span><span class="line"><span class="cl">hugo server --buildDrafts
+</span></span><span class="line"><span class="cl">hugo --minify</span></span></code></pre></div></details><h2 id="responsive-images">Responsive images</h2>
+<p>Images placed in <code>assets/</code> can be inserted with the <code>asset-image</code> shortcode, which handles WebP
+conversion and sizing for you:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">{{&lt; asset-image &#34;images/dev-image-03.jpeg&#34; &#34;600&#34; &#34;400&#34; &#34;A caption&#34; &gt;}}</span></span></code></pre></div><h2 id="thats-it">That&rsquo;s it</h2>
+<p>Everything else is standard Markdown. Headings, lists, links, blockquotes, tables — they all just
+work.</p>
+ ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Why I Write</title><enclosure url="http://localhost:1313/images/dev-image-02_hu_dc9ab0f4cea54221.jpeg" length="1789867" type="image/jpeg" /><link>http://localhost:1313/2026/02/why-i-write/</link>
+            <guid isPermaLink="true">http://localhost:1313/2026/02/why-i-write/</guid>
+            <dc:creator>Your Name</dc:creator>
+                <category>Writing</category>
+                <category>blogging</category>
+                <category>thoughts</category><pubDate>Sat, 14 Feb 2026 09:30:00 -0600</pubDate><description>Some thoughts on keeping a blog in an age of infinite feeds.</description><content:encoded><![CDATA[ <p>I write to think. There is something about putting a half-formed idea into sentences that forces me
+to notice where the idea is actually hollow.</p>
+<h2 id="writing-as-a-filter">Writing as a filter</h2>
+<p>When a thought stays in my head, it feels complete. The moment I try to write it down, the gaps show
+up. Writing is how I separate the ideas that survive contact with a keyboard from the ones that only
+sounded good at 2 a.m.</p>
+<h2 id="owning-the-words">Owning the words</h2>
+<p>A blog I own is different from a post on someone else&rsquo;s platform. There is no engagement metric
+here, no algorithmic timeline deciding who sees this. That freedom changes what I&rsquo;m willing to say.</p>
+<blockquote>
+<p>The best reason to write on your own site is that nobody can take it away from you.</p>
+</blockquote>
+<p>If you&rsquo;re considering starting a blog, my advice is simply: start. Write the first post badly, publish
+it, and fix it later.</p>
+ ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Welcome to the Blog</title><enclosure url="http://localhost:1313/images/dev-image-01_hu_127ac80d347f0dfb.jpeg" length="2456021" type="image/jpeg" /><link>http://localhost:1313/2026/01/welcome-to-the-blog/</link>
+            <guid isPermaLink="true">http://localhost:1313/2026/01/welcome-to-the-blog/</guid>
+            <dc:creator>Your Name</dc:creator>
+                <category>Meta</category>
+                <category>welcome</category>
+                <category>hugo</category><pubDate>Fri, 02 Jan 2026 10:00:00 -0600</pubDate><description>A short hello and a look at what this site is going to be.</description><content:encoded><![CDATA[ <p>Hello, and welcome. This is the first post on a brand-new blog, which means it is mostly a promise
+about what comes next rather than a finished thing.</p>
+<h2 id="what-to-expect">What to expect</h2>
+<p>I plan to write here about three broad topics:</p>
+<ol>
+<li><strong>Software</strong> — things I build, tools I like, and lessons learned the hard way.</li>
+<li><strong>Books</strong> — short reactions to what I&rsquo;m reading, tracked in the <a href="http://localhost:1313/library/">library</a>.</li>
+<li><strong>Notes</strong> — quick, half-formed thoughts that don&rsquo;t deserve a full post.</li>
+</ol>
+<h2 id="how-this-site-is-built">How this site is built</h2>
+<p>This site is generated with <a href="https://gohugo.io">Hugo</a> using the Kana theme. That means every page
+you read started life as a Markdown file. Writing a post is as simple as creating a new file and
+running the dev server.</p>
+<p>If you&rsquo;d like to follow along, subscribe to the <a href="http://localhost:1313/index.xml">RSS feed</a>. See you in the next one.</p>
+ ]]></content:encoded>
+        </item>
+        
+    </channel>
+</rss>
